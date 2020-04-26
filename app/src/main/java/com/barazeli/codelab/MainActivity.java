@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     private Button login,register;
     private TextInputEditText email_edit,password_edit;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setWidgets();
+        auth=FirebaseAuth.getInstance();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { setRegister(); }
@@ -37,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email=email_edit.getText().toString();
-                String password=password_edit.getText().toString();
+                String email= Objects.requireNonNull(email_edit.getText()).toString();
+                String password= Objects.requireNonNull(password_edit.getText()).toString();
                 if (validateEmail()||validatePassword()){
                     setLogin(email,password);
                 
@@ -59,10 +62,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void setLogin(String email,String password){
-
-      auth=FirebaseAuth.getInstance();
-
-      auth.signInWithEmailAndPassword(email,password)
+        auth.signInWithEmailAndPassword(email,password)
               .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
           @Override
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
       });
     }
     private boolean validateEmail(){
-        String email=email_edit.getText().toString();
+        String email= Objects.requireNonNull(email_edit.getText()).toString();
         if (email.isEmpty()){
             email_edit.setError("Require field ..");
             email_edit.setFocusable(true);
@@ -92,13 +92,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private boolean validatePassword(){
-        String email=password_edit.getText().toString();
+        String email= Objects.requireNonNull(password_edit.getText()).toString();
         if (email.isEmpty()){
             password_edit.setError("Require field ..");
             password_edit.setFocusable(true);
             return false;
         }else {
             return  true;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (auth!=null){
+            Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 }

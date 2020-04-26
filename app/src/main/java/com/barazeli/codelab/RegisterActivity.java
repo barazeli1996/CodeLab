@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import aModel.User;
 
@@ -37,9 +38,9 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userName=username_edit.getText().toString();
-                String email=email_edit.getText().toString();
-                String password=password_edit.getText().toString();
+                String userName= Objects.requireNonNull(username_edit.getText()).toString();
+                String email= Objects.requireNonNull(email_edit.getText()).toString();
+                String password= Objects.requireNonNull(password_edit.getText()).toString();
                 if (validatePassword()||validateEmail()||validateUserName()){
                     setRegister(userName,email,password);
                 }
@@ -93,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
     private boolean validateEmail(){
-        String email=email_edit.getText().toString();
+        String email= Objects.requireNonNull(email_edit.getText()).toString();
         if (email.isEmpty()){
             email_edit.setError("Require field ..");
             email_edit.setFocusable(true);
@@ -103,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     private boolean validateUserName(){
-        String email=username_edit.getText().toString();
+        String email= Objects.requireNonNull(username_edit.getText()).toString();
         if (email.isEmpty()){
             username_edit.setError("Require field ..");
             username_edit.setFocusable(true);
@@ -113,13 +114,19 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     private boolean validatePassword(){
-        String email=password_edit.getText().toString();
+        String email= Objects.requireNonNull(password_edit.getText()).toString();
         if (email.isEmpty()){
             password_edit.setError("Require field ..");
             password_edit.setFocusable(true);
             return false;
         }else {
-            return  true;
+            if (email.length()<6){
+                password_edit.setError("Short password 6 character at least ");
+                password_edit.setFocusable(true);
+                return false;
+            }else {
+                return true;
+            }
         }
     }
 }
