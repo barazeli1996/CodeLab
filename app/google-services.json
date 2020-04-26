@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "780961767283",
+    "firebase_url": "https://barachat-eb6ca.firebaseio.com",
+    "project_id": "barachat-eb6ca",
+    "storage_bucket": "barachat-eb6ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780961767283:android:46fd274c718cae3ed8ef06",
+        "android_client_info": {
+          "package_name": "com.barazeli.barachat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwvLxv4ho-B8jCh59Yqgb4yqLJRtmmqfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780961767283:android:ca6ac6efc1a291ead8ef06",
+        "android_client_info": {
+          "package_name": "com.barazeli.bbchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwvLxv4ho-B8jCh59Yqgb4yqLJRtmmqfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780961767283:android:7c83bf6acb61275cd8ef06",
+        "android_client_info": {
+          "package_name": "com.barazeli.codelab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwvLxv4ho-B8jCh59Yqgb4yqLJRtmmqfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780961767283-ur24mc93bf4r596a2ichp8nd5k7dt5k2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

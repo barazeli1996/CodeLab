@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CodeLab</string>
+    <string name="create_new_account">CREATE NEW ACCOUNT</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="email_address">email address</string>
+    <string name="username_register">username_register</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">username</string>
+</resources>
