@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Objects;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText email_edit,password_edit;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-
+    private FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,10 +106,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (auth!=null){
+        firebaseUser=auth.getCurrentUser();
+        if (firebaseUser!=null){
             Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         }
     }
+
+
 }
